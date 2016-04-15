@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<conf>
+
+	<!-- HBase配置 -->
+	<hbase>
+		<!-- HBase连接配置 -->
+		<zookeeperQuorum>glsx.hadoop316:2181\,glsx.hadoop317:2181\,glsx.hadoop318:2181</zookeeperQuorum>
+		<zookeeperClientPort>2181</zookeeperClientPort>
+		<!-- HBase权限配置 -->
+		<isSecurity>false</isSecurity> <!-- 集群启用权限管理：true:启用；false:不启用； -->
+		<remoteUser>hbase-user</remoteUser> <!-- hbase连接的用户名 -->
+		<!-- HBase表列族配置 -->
+		<columnFamily>info</columnFamily>
+	</hbase>
+
+	<tableLoad>
+		<tableName>test0</tableName>
+		<familyName>info</familyName>
+		<apType>05</apType>
+	</tableLoad>
+
+	<kafkaConfig>
+		<zookeeperQuorum>192.168.3.100:2181</zookeeperQuorum>
+		<brokerList>192.168.3.100:9096</brokerList>
+		<topicName>test0</topicName>
+		<groupId>groupC</groupId>
+		<threadNum>3</threadNum>
+		<serializerClass>kafka.serializer.DefaultEncoder</serializerClass>
+	</kafkaConfig>
+	
+	<modeConfig>
+		<className>com.glsx.service.BaseStationService</className>
+	</modeConfig>
+	
+</conf>
